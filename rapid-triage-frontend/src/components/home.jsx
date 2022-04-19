@@ -19,10 +19,12 @@ class Home extends Component {
 
     handleLogin = () =>{
         console.log("login clicked", this);
+        this.setState({ count: this.state.count + 1})
     }
 
     handleRegister = () =>{
         console.log("register clicked", this);
+        this.setState({ count: this.state.count - 1})
 
     }
 
