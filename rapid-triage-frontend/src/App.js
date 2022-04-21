@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/navbar';
 import Home from './components/home';
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 function App() {
