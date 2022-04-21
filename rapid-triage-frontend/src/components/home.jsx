@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 class Home extends Component {
     state = { 
@@ -11,21 +12,16 @@ class Home extends Component {
         fontWeight: "bold"
     };
 
-    constructor(){
-        super();
-        this.handleLogin = this.handleLogin.bind(this);
-        this.handleRegister = this.handleRegister.bind(this);
-    }
-
-    handleLogin = () =>{
-        console.log("login clicked", this);
+    goToLogin = () => {
         this.setState({ count: this.state.count + 1})
+        console.log("login clicked", this);
     }
 
-    handleRegister = () =>{
-        console.log("register clicked", this);
+    goToRegister = () => {
         this.setState({ count: this.state.count - 1})
-
+        console.log("register clicked", this);
+        // const navigate = useNavigate()
+        // navigate('http://localhost:8080/api/users');
     }
 
     render() { 
@@ -33,8 +29,16 @@ class Home extends Component {
         <React.Fragment>
             <h1>Welcome to RapidTriage app!</h1>
             <span style = {this.styles} className="badge badge-primary m-2">{this.state.count}</span>
-            <button onClick={this.handleLogin}>Log in</button>
-            <button onClick={this.handleRegister}>Register</button>
+            <button 
+            onClick={this.goToLogin}
+            >
+                Log in
+            </button>
+            <button
+            onClick={this.goToRegister}
+            >
+                Register
+            </button>
         </React.Fragment>
         );
     }
