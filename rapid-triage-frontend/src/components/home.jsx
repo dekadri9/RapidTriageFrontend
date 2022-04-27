@@ -14,6 +14,7 @@ class Home extends Component {
     };
 
     goToLogin = () => {
+
         this.setState({ count: this.state.count + 1})
         console.log("login clicked", this);
     }
@@ -30,14 +31,11 @@ class Home extends Component {
         <React.Fragment>
             <h1>Welcome to RapidTriage app!</h1>
             <span className="badge bg-primary m-2">{this.state.count}</span>
-            <button 
-            onClick={this.goToLogin}
-            className = "btn btn-secondary btn-sm m-2"
-            >
+            <button onClick={event => window.location.href='/login'} className = "btn btn-secondary btn-sm m-2">
                 Log in
             </button>
             <button
-            onClick={this.goToRegister}
+            onClick={event => window.location.href='/signup'}
             className = "btn btn-secondary btn-sm"
             >
                 Register
