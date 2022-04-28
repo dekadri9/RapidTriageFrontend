@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './components/home';
 import Login from './components/login';
+import SignUp from './components/signUp';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +19,8 @@ root.render(
         <Route path="/login" element={<Login />}>
         </Route>
         <Route path="/app" element={<App />}>
+        </Route>
+        <Route path="/signup" element={<SignUp />}>
         </Route>
       </Routes>
     </div>
